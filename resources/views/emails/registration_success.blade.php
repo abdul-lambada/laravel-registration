@@ -9,7 +9,7 @@
         <h2 style="color: #2563eb; text-align: center;">Registrasi Berhasil!</h2>
         <p>Halo <b>{{ $registration->name }}</b>,</p>
         <p>Terima kasih telah melakukan registrasi.</p>
-        <p>Salam,<br>Tim {{ config('app.name') }}</p>
+        <p>Salam,<br>Abdul Kholik</p>
     </div>
 </body>
 </html>
