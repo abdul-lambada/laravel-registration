@@ -1,63 +1,97 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Laravel Registration Form
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A simple registration web app built with **Laravel 10** and **Tailwind CSS 3**. Features a modern registration form, MySQL database integration, email notification using Mailtrap, and complete feature/unit tests.
 
-## About Laravel
+## Features
+- Responsive registration form (name, email, address) with validation & modern UI
+- Stores data to MySQL (`registrations` table)
+- Sends HTML email notification to registered user (Mailtrap by default)
+- Confirmation message after successful registration
+- Page to list all registrants
+- Secure input handling (validation & sanitization)
+- Unit & feature tests for core functionality
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Requirements
+- PHP >= 8.1
+- Composer
+- Node.js & npm
+- MySQL
+- Laravel 10.x
+- Tailwind CSS 3.x
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Setup Instructions
+1. **Clone the repository:**
+   ```sh
+   git clone <repo_url>
+   cd laravel-registration
+   ```
+2. **Install dependencies:**
+   ```sh
+   composer install
+   npm install
+   ```
+3. **Copy & configure environment:**
+   ```sh
+   cp .env.example .env
+   # Edit .env for your DB and Mailtrap credentials
+   ```
+4. **Generate app key:**
+   ```sh
+   php artisan key:generate
+   ```
+5. **Run migrations:**
+   ```sh
+   php artisan migrate
+   ```
+6. **Build frontend assets:**
+   ```sh
+   npm run build
+   # or for development: npm run dev
+   ```
+7. **Serve the app:**
+   ```sh
+   php artisan serve
+   ```
+8. **Access the app:**
+   - Registration form: [http://localhost:8000/](http://localhost:8000/)
+   - List of registrants: [http://localhost:8000/registrations](http://localhost:8000/registrations)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Email Notification Setup
+- Uses [Mailtrap](https://mailtrap.io/) for development/testing.
+- Set your Mailtrap credentials in `.env`:
+  ```env
+  MAIL_MAILER=smtp
+  MAIL_HOST=sandbox.smtp.mailtrap.io
+  MAIL_PORT=2525
+  MAIL_USERNAME=your_mailtrap_username
+  MAIL_PASSWORD=your_mailtrap_password
+  MAIL_ENCRYPTION=null
+  MAIL_FROM_ADDRESS="your@email.com"
+  MAIL_FROM_NAME="Laravel Registration"
+  ```
 
-## Learning Laravel
+## Running Tests
+Run all unit and feature tests:
+```sh
+php artisan test
+```
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Folder Structure
+- `app/Http/Controllers/RegistrationController.php` — Form logic & data handling
+- `app/Models/Registration.php` — Eloquent model
+- `app/Mail/RegistrationSuccess.php` — Mailable for notification
+- `resources/views/register.blade.php` — Registration form UI
+- `resources/views/registrations.blade.php` — Registrant list UI
+- `resources/views/emails/registration_success.blade.php` — Email HTML template
+- `tests/Feature/RegistrationTest.php` — Feature/unit tests
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## Credits
+- Built with Laravel 10, Tailwind CSS 3, and Mailtrap
+- Developed by [Your Name]
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
+Feel free to fork and customize for your own use!
 
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
 
 If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
