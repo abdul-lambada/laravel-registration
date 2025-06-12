@@ -1,7 +1,3 @@
-Tentu, berikut adalah terjemahan deskripsi file README ke Bahasa Indonesia:
-
------
-
 # Formulir Pendaftaran Laravel
 
 Aplikasi web pendaftaran sederhana yang dibangun dengan **Laravel 10** dan **Tailwind CSS 3**. Menampilkan formulir pendaftaran modern, integrasi database MySQL, notifikasi email menggunakan Mailtrap, dan tes fitur/unit lengkap.
