@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use App\Models\Registration;
 
 class RegistrationController extends Controller
 {
@@ -29,5 +30,11 @@ class RegistrationController extends Controller
         });
 
         return redirect()->route('register.create')->with('success', 'Pendaftaran berhasil!');
+    }
+
+    public function index()
+    {
+        $registrations = \App\Models\Registration::orderByDesc('created_at')->get();
+        return view('registrations', compact('registrations'));
     }
 }

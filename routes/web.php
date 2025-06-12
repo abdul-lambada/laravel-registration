@@ -16,3 +16,4 @@ use App\Http\Controllers\RegistrationController;
 
 Route::get('/', [RegistrationController::class, 'create'])->name('register.create');
 Route::post('/', [RegistrationController::class, 'store'])->name('register.store');
+Route::get('/registrations', [RegistrationController::class, 'index'])->name('registrations.index');
