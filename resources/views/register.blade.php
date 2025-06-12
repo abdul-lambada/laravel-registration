@@ -47,10 +47,7 @@
                     <span class="text-red-500 text-xs mt-1 block">{{ $message }}</span>
                 @enderror
             </div>
-            <button type="submit" class="w-full flex justify-center items-center gap-2 bg-gradient-to-r from-blue-500 via-blue-600 to-green-400 text-white font-bold text-lg py-3 px-4 rounded-xl shadow-lg hover:from-blue-600 hover:to-green-500 focus:outline-none focus:ring-2 focus:ring-blue-300 transition-all duration-200 disabled:opacity-60" :disabled="loading">
-                <svg x-show="loading" class="animate-spin h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"></path></svg>
-                <span x-text="loading ? 'Mendaftar...' : 'Daftar'"></span>
-            </button>
+            <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg py-3 px-4 rounded-xl shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-300 transition-all duration-200">Daftar</button>
         </form>
     </div>
 </div>
