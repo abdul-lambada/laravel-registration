@@ -1,0 +1,20 @@
+Inisialisasi Project Laravel 10
+Membuat project baru Laravel 10 di direktori C:\Users\engin\CascadeProjects\laravel-registration.
+Instalasi Tailwind CSS 3
+Mengintegrasikan Tailwind CSS 3 ke dalam project Laravel.
+Membuat Form Pendaftaran
+Membuat halaman dan komponen form pendaftaran (nama, email, alamat).
+Membuat Migration Table registrations
+Membuat migration untuk tabel registrations (id, nama, email, alamat).
+Membuat Model & Controller
+Untuk menangani input, validasi, dan penyimpanan ke database.
+Koneksi Database
+Mengatur .env untuk koneksi ke MySQL.
+Validasi & Sanitasi Input
+Menambahkan validasi dan sanitasi input untuk menghindari SQL Injection.
+Mengirimkan Email Notifikasi
+Mengirim email notifikasi setelah pendaftaran berhasil.
+Pesan Konfirmasi
+Menampilkan pesan konfirmasi pada user.
+(Opsional) Halaman Daftar Registrasi
+Halaman untuk menampilkan daftar pendaftar.
