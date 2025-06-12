@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use App\Models\Registration;
+use App\Mail\RegistrationSuccess;
 
 class RegistrationController extends Controller
 {
@@ -24,10 +25,7 @@ class RegistrationController extends Controller
         $registration = \App\Models\Registration::create($validated);
 
         // Kirim email notifikasi ke email yang didaftarkan
-        Mail::send('emails.registration_success', ['registration' => $registration], function ($message) use ($registration) {
-            $message->to($registration->email)
-                    ->subject('Registrasi Berhasil');
-        });
+        Mail::to($registration->email)->send(new RegistrationSuccess($registration));
 
         return redirect()->route('register.create')->with('success', 'Pendaftaran berhasil!');
     }
