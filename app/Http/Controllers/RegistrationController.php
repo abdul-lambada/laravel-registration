@@ -24,7 +24,7 @@ class RegistrationController extends Controller
         $registration = \App\Models\Registration::create($validated);
 
         // Kirim email notifikasi ke email yang didaftarkan
-        Mail::raw('Terima kasih telah melakukan registrasi!', function ($message) use ($registration) {
+        Mail::send('emails.registration_success', ['registration' => $registration], function ($message) use ($registration) {
             $message->to($registration->email)
                     ->subject('Registrasi Berhasil');
         });
